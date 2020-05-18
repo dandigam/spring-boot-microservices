@@ -17,8 +17,12 @@ public class MovieInfoServiceImpl implements MovieInfoService {
 	@Override
 	public MovieInfo getMovieInfo(Integer movieId) {
 		Optional<MovieInfo> movieInfo = movieInfoRepository.findById(movieId);
-
 		return movieInfo.get();
+	}
+
+	@Override
+	public MovieInfo addMovie(MovieInfo movieInfo) {
+		return movieInfoRepository.save(movieInfo);
 	}
 
 }

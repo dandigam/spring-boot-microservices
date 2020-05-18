@@ -6,4 +6,6 @@ public interface MovieInfoService {
 
 	MovieInfo getMovieInfo(Integer movieId);
 
+	MovieInfo addMovie(MovieInfo movieInfo);
+
 }

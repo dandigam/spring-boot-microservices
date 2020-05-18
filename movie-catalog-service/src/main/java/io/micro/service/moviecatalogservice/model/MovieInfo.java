@@ -1,13 +1,7 @@
-package io.micro.service.movieinfoservice.model;
+package io.micro.service.moviecatalogservice.model;
 
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
-
-
-@Document(collection = "app_movie_info")
 public class MovieInfo {
 
-	@Id
 	private int movieId;
 
 	private int userId;
