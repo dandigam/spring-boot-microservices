@@ -17,6 +17,7 @@ import org.springframework.web.client.RestTemplate;
 import io.micro.service.moviecatalogservice.model.CatalogItem;
 import io.micro.service.moviecatalogservice.model.MovieInfo;
 import io.micro.service.moviecatalogservice.model.Rating;
+import io.micro.service.moviecatalogservice.model.User;
 
 @Service
 public class MovieCatalogServiceImpl implements MovieCatalogService {
@@ -30,7 +31,7 @@ public class MovieCatalogServiceImpl implements MovieCatalogService {
 		HttpHeaders headers = new HttpHeaders();
 		headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
 		HttpEntity<String> entity = new HttpEntity<String>("parameters", headers);
-		
+
 		ResponseEntity<List<Rating>> result = restTemplate.exchange("http://localhost:8083/rating/" + userId,
 				HttpMethod.GET, entity, new ParameterizedTypeReference<List<Rating>>() {
 				});
@@ -44,6 +45,13 @@ public class MovieCatalogServiceImpl implements MovieCatalogService {
 		}
 
 		return catalogItems;
+	}
+
+	@Override
+	public User userLogin(User user) {
+
+		String loginUrl = "http://user-service/user/userlogin";
+		return restTemplate.postForObject(loginUrl, user, User.class);
 	}
 
 }
