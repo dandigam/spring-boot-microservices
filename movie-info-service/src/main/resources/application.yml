@@ -1,0 +1,5 @@
+server:  port: 8082  spring:  application:    name: movie-info-service      datasource:    url: jdbc:mysql://localhost:3306/movie_info    username: root    password: root    driver-class-name: com.mysql.cj.jdbc.Driver  jpa:    hibernate:      ddl-auto: update    generate-ddl: true    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect      logging:  level:    '[org.springframework.web]': ERROR    '[io.micro.service]': INFO    '[org.hibernate]': ERROR  file:    name: appLog.log  pattern:    console: "%d [%level] %c{1.} [%t] %m%n"    file: "%d [%level] %c{1.} [%t] %m%n"        eureka:  client:    register-with-eureka: true    fetch-registry: true    service-url:      defalutZone: http://localhost:8761/eureka/  instance:    hostname: localhost  
+
+
+
+

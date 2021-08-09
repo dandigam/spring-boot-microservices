@@ -4,7 +4,7 @@ import io.micro.service.movieinfoservice.model.MovieInfo;
 
 public interface MovieInfoService {
 
-	MovieInfo getMovieInfo(Integer movieId);
+	MovieInfo getMovieInfo(Long movieId);
 
 	MovieInfo addMovie(MovieInfo movieInfo);
 
