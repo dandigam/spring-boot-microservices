@@ -80,7 +80,7 @@
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
-	f
+	
 
 	<build>
 		<plugins>
